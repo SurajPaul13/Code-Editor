@@ -8,14 +8,7 @@ const app = express();
 const server = http.createServer(app);
 const io = new Server(server);
 
-app.use(
-  cors({
-    origin: 'http://localhost:8080', // Allow requests from this origin
-    methods: ['GET', 'POST'], // Specify allowed methods
-    allowedHeaders: ['Content-Type'], // Specify allowed headers
-    credentials: true, // Allow credentials (optional)
-  })
-);
+app.use(cors());
 
 let code = '';
 
